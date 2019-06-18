@@ -14,6 +14,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/foodiefm/sequel-opentracing'
   spec.license       = 'BSD-3-Clause'
 
+  spec.metadata = {
+    'bug_tracker_uri' => 'https://github.com/foodiefm/sequel-opentracing/issues',
+    'homepage_uri'    => 'https://github.com/foodiefm/sequel-opentracing',
+    'source_code_uri' => 'https://github.com/foodiefm/sequel-opentracing',
+  }
+
   spec.files         = %w(README.md Rakefile) + Dir.glob("{doc,lib}/**/*")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
