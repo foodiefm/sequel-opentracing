@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "sequel-opentracing"
   spec.version       = [Sequel::OpenTracing::VERSION, 'pre'].join('.')
   spec.authors       = ["larte"]
-  spec.email         = ["devops@digitalgoodie.com"]
+  spec.email         = ["devops@foodie.fm"]
 
   spec.summary       = 'Sequel OpenTracing intrumentation'
   spec.description   = ''
-  spec.homepage      = 'https://github.com/foodiefm/repo'
+  spec.homepage      = 'https://github.com/foodiefm/sequel-opentracing'
   spec.license       = 'BSD-3-Clause'
 
   spec.files         = %w(README.md Rakefile) + Dir.glob("{doc,lib}/**/*")
