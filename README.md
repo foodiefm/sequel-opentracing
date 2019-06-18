@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/foodiefm/sequel-opentracing.svg?branch=master)](https://travis-ci.com/foodiefm/sequel-opentracing)
+[![Coverage Status](https://coveralls.io/repos/github/foodiefm/sequel-opentracing/badge.svg?branch=master)](https://coveralls.io/github/foodiefm/sequel-opentracing?branch=master)
+
 # Sequel::Opentracing
 
 Instrument Sequel database events with OpenTracing.
@@ -11,6 +14,10 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'sequel-opentracing'
 ```
+
+## Requirements
+
+Sequel > 4.37.0
 
 ## Usage
 

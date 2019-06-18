@@ -7,11 +7,15 @@ require 'sequel/opentracing/database'
 require 'sequel/opentracing/dataset'
 
 module Sequel
-  module Opentracing
-    ## Apply intrumentation
+  # Opentracing instrumentation for SEquel
+  module OpenTracing
+    ##
     def self.instrument
-      ::Sequel::Database.send(:prepend, Database::Tracer::InstanceMethods)
-      ::Sequel::Dataset.send(:prepend, Database::Tracer::InstanceMethods)
+      warn 'Sequel < 4.37.0 not supported' if ::Sequel::VERSION < '4.37.0'
+      ::Sequel::Database.send(:prepend,
+                              Sequel::OpenTracing::Database::Tracer::InstanceMethods)
+      ::Sequel::Dataset.send(:prepend,
+                             Sequel::OpenTracing::Dataset::Tracer::InstanceMethods)
       self
     end
   end

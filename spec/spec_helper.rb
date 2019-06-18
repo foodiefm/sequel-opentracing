@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
+
+require 'coveralls'
+Coveralls.wear!
+
 require 'sequel/opentracing'
 require 'opentracing_test_tracer'
 require 'database_cleaner'
@@ -15,10 +19,10 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner[:sequel,
-                    { :connection => test_db}].strategy = :truncation
+                    { connection: test_db }].strategy = :truncation
   end
 
-  config.around(:each) do |example|
+  config.around do |example|
     DatabaseCleaner.cleaning do
       example.run
     end
