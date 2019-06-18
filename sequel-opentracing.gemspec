@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['larte']
   spec.email         = ['devops@foodie.fm']
 
-  spec.summary       = 'Sequel OpenTracing intrumentation'
+  spec.summary       = 'Sequel OpenTracing instrumentation'
   spec.description   = spec.summary
   spec.homepage      = 'https://github.com/foodiefm/sequel-opentracing'
   spec.license       = 'BSD-3-Clause'
