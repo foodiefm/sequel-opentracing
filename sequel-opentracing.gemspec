@@ -6,8 +6,8 @@ require "sequel/opentracing/version"
 Gem::Specification.new do |spec|
   spec.name          = "sequel-opentracing"
   spec.version       = [Sequel::OpenTracing::VERSION, 'pre'].join('.')
-  spec.authors       = ["larte"]
-  spec.email         = ["devops@foodie.fm"]
+  spec.authors       = ['larte']
+  spec.email         = ['devops@foodie.fm']
 
   spec.summary       = 'Sequel OpenTracing intrumentation'
   spec.description   = ''
@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'database_cleaner', '~> 1.7'
   spec.add_development_dependency 'coveralls'
 
-  spec.add_dependency 'sequel'
+  spec.add_dependency 'sequel', '> 4.37.0'
   spec.add_dependency 'opentracing', '~> 0.4'
 end
