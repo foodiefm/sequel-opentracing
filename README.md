@@ -5,7 +5,7 @@
 
 Instrument Sequel database events with OpenTracing.
 
-*NO GEM HAS BEEN PUBLISHED YET*
+* This gem is in early stage of development, pre-release gems available
 
 ## Installation
 
@@ -31,7 +31,6 @@ Sequel::OpenTracing.instrument
 
 ```
 
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -40,12 +39,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sequel-opentracing. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/foodiefm/sequel-opentracing. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause).
 
 ## Code of Conduct
 
-Everyone interacting in the Sequel::Opentracing project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/sequel-opentracing/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Sequel::Opentracing project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/foodiefm/sequel-opentracing/blob/master/CODE_OF_CONDUCT.md).
