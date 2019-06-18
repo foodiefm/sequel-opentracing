@@ -12,10 +12,8 @@ module Sequel
     ##
     def self.instrument
       warn 'Sequel < 4.37.0 not supported' if ::Sequel::VERSION < '4.37.0'
-      ::Sequel::Database.send(:prepend,
-                              Sequel::OpenTracing::Database::Tracer::InstanceMethods)
-      ::Sequel::Dataset.send(:prepend,
-                             Sequel::OpenTracing::Dataset::Tracer::InstanceMethods)
+      ::Sequel::Database.send(:prepend, Database::Tracer::InstanceMethods)
+      ::Sequel::Dataset.send(:prepend, Dataset::Tracer::InstanceMethods)
       self
     end
   end

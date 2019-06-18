@@ -7,7 +7,8 @@ RSpec.describe Sequel::OpenTracing::Dataset do
   let(:db) { test_db }
 
   before do
-    db.run('CREATE TABLE IF NOT EXISTS items(id integer PRIMARY KEY, name TEXT NOT NULL)')
+    db.run('CREATE TABLE IF NOT EXISTS ' \
+           'items(id integer PRIMARY KEY, name TEXT NOT NULL)')
     _null = db[:items].first
     ::OpenTracing.global_tracer = tracer
     Sequel::Dataset.send(:prepend, described_class::Tracer::InstanceMethods)
@@ -24,7 +25,7 @@ RSpec.describe Sequel::OpenTracing::Dataset do
     end
   end
 
-  context '.execute_ddl' do
+  describe '.execute_ddl' do
     before do
       db[:items].first
     end
@@ -39,7 +40,7 @@ RSpec.describe Sequel::OpenTracing::Dataset do
     end
   end
 
-  context '.execute_insert' do
+  describe '.execute_insert' do
     before do
       db[:items].insert(id: 2, name: 'bar')
     end
@@ -59,7 +60,7 @@ RSpec.describe Sequel::OpenTracing::Dataset do
       db[:items].delete
     end
 
-        it_behaves_like 'correct span' do
+    it_behaves_like 'correct span' do
       let(:spans) { tracer.spans }
     end
 
@@ -88,10 +89,7 @@ RSpec.describe Sequel::OpenTracing::Dataset do
 
     it 'folds with symbol' do
       res = db[:items].send(:parse_opts, symbol_s, {}, {})
-      expect(res[:query]).to eql(:foo)
+      expect(res[:query]).to be(:foo)
     end
-
-
   end
-
 end

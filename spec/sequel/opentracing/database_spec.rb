@@ -7,12 +7,13 @@ RSpec.describe Sequel::OpenTracing::Database do
   let(:db) { test_db }
 
   before do
-    db.run('CREATE TABLE IF NOT EXISTS items(id integer PRIMARY KEY, name TEXT NOT NULL)')
+    db.run('CREATE TABLE IF NOT EXISTS ' \
+           'items(id integer PRIMARY KEY, name TEXT NOT NULL)')
     ::OpenTracing.global_tracer = tracer
     Sequel::Database.send(:prepend, described_class::Tracer::InstanceMethods)
   end
 
-  context '.run' do
+  describe '.run' do
     before do
       db.run('insert into items values(1, \'foo\')')
     end
@@ -46,7 +47,7 @@ RSpec.describe Sequel::OpenTracing::Database do
 
     it 'folds with symbol' do
       res = db.send(:parse_opts, symbol_s, {})
-      expect(res[:query]).to eql(:foo)
+      expect(res[:query]).to be(:foo)
     end
   end
 end
